@@ -1,10 +1,12 @@
 ---
+import SidebarLink from '../components/SidebarLink.astro';
+
 const { title } = Astro.props;
 ---
 
 <footer class="site-footer">
     <div class="footer-wrapper">
-        <a href="../privacy-policy">Privacy Policy</a>
+        <SidebarLink href="/privacy-policy">Privacy Policy</SidebarLink>
         <a href="/"><i class="fa-solid fa-terminal"></i>{title}</a>
         <p>Copyright © <u>2023</u>. All rights reserved.</p>
     </div>

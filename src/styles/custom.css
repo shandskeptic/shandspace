@@ -82,7 +82,7 @@ body {
 }
 
 /* Dark Mode */
-/* :root:has(#light:checked) {
+:root:has(#light:checked) {
     ::-webkit-scrollbar-track {
         background-color: var(--secondary-color);
     }
@@ -139,4 +139,4 @@ body {
     .footer-wrapper :is(a:hover, a:hover>i) {
         color: var(--senary-color);
     }
-} */
+}

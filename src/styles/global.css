@@ -147,16 +147,14 @@ a:hover>span {
     color: var(--senary-color);
 }
 
-.sidebar-item>a:hover>span {
+/* .sidebar-item>a:hover>span {
     padding: 3rem 4rem;
     transition: 0.4s ease-in-out;
 }
 
 .sidebar-item>a:not(:hover)>span {
     transition: 0.4s ease-in-out;
-    margin-left: 4rem;
-    padding: 2rem;
-}
+} */
 
 
 /* Content Wrapper */
@@ -170,7 +168,7 @@ a:hover>span {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto 5rem;
     grid-template-areas: 'content';
-    overflow: auto;
+    overflow: hidden;
 }
 
 /* Main Content */

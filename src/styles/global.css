@@ -147,12 +147,16 @@ a:hover>span {
     color: var(--senary-color);
 }
 
-.sidebar-list>li>a:hover>span {
+.sidebar-item>a:hover>span {
     padding: 3rem 4rem;
     transition: 0.4s ease-in-out;
+    -webkit-transition: 0.4s ease-in-out;
+    -moz-transition: 0.4s ease-in-out;
+    -ms-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
 }
 
-.sidebar-list>li>a:not(:hover)>span {
+.sidebar-item>a:not(:hover)>span {
     transition: 0.4s ease-in-out;
 }
 

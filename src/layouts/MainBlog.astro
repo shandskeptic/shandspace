@@ -1,0 +1,119 @@
+---
+import Meta from '../components/Meta.astro';
+import MainContent from '../components/MainContent.astro';
+
+import { getCollection, getEntryBySlug } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+
+const blogPosts = await getCollection('blog', ({ data }) => {
+    return !data.draft && data.date < new Date();
+});
+
+const post1 = await getEntryBySlug('blog', 'post-1');
+
+const { title } = Astro.props;
+---
+
+<Meta title={title}>
+    <MainContent title={title}>
+        <div class="title">{title}</div>
+        <section>
+            <center><div class="description">All the articles I've posted.</div></center>
+            <div class="main-blog">
+                <ul class="blog-list">
+                    {
+                        blogPosts.map((post) => (
+                            <li class="blog-item">
+                                <div class="blog-img">
+                                    <img src={post.data.image.url} alt={post.data.image.alt} />
+                                </div>
+                                <div class="blog-info">
+                                    <div class="blog-label">
+                                        <FormattedDate date={post.data.date} />
+                                    </div>
+                                    <div class="blog-title">
+                                        <a href={`/blog/${post.slug}`} class="description">
+                                            {post.data.title}
+                                        </a>
+                                    </div>
+                                    <div class="blog-description">
+                                        <p class="description">{post.data.description}</p>
+                                    </div>
+                                </div>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </section>
+
+        <style>
+            .main-blog {
+            }
+
+            .blog-list {
+                list-style: none;
+                margin: 0;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                justify-content: center;
+            }
+
+            .blog-item {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+                margin: 2rem;
+            }
+
+            .blog-info > a {
+                text-decoration: none;
+                position: relative;
+            }
+
+            .blog-title > a {
+                font-weight: bold;
+                text-decoration: none;
+                font-size: 1.25rem;
+            }
+            .blog-title > a:not(:hover) {
+                color: var(--primary-color);
+            }
+
+            .blog-img > img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .blog-label {
+                display: flex;
+                margin: 1rem;
+                font-weight: bold;
+            }
+
+            .blog-title {
+                margin: 1rem;
+            }
+
+            .blog-description {
+                margin: 1rem;
+            }
+        </style>
+
+        <!-- <section>
+            {
+                blogPosts.map((post) => (
+                    <ul>
+                        <li>
+                            <div class="description">{post.data.title}</div>
+                            <a href={`/blog/${post.slug}`} class="description">
+                                Read Me
+                            </a>
+                            <div class="description">
+                                <FormattedDate date={post.data.date} />
+                            </div>
+                        </li>
+                    </ul>
+                ))
+            }
+        </section> -->
+    </MainContent>
+</Meta>

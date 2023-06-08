@@ -1,0 +1,142 @@
+/* Root CSS */
+:root {
+    --primary-color: black;
+    --secondary-color: white;
+    --tertiary-color: grey;
+    --quaternary-color: #c3809a;
+    --quinary-color: green;
+    --senary-color: red;
+    --septenary-color: purple;
+
+    --body-background-color: grey;
+    --header-background-color: #c3809a;
+    --sidebar-background-color: #c3809a;
+    --main-background-color: #c3809a;
+    --footer-background-color: #c3809a;
+
+    --primary-size: 1rem;
+    --secondary-size: 1.25rem;
+
+    --primary-transform: transform 0.4s ease-in-out;
+}
+
+/* Reset CSS */
+*,
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Cardo', Arial, sans-serif;
+    font-size: var(--primary-size);
+}
+
+/* Custom Font */
+@font-face {
+    font-family: 'Cardo';
+    src: url('./Cardo-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Fancy';
+    src: url('./FancyCardText.ttf');
+}
+
+@font-face {
+    font-family: 'RockSalt';
+    src: url('./RockSalt-Regular.ttf');
+}
+
+/* Webkit (Chrome, Safari, Opera) */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--quaternary-color);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+}
+
+/* Firefox */
+* {
+    scrollbar-color: var(--secondary-color) #f1f1f1;
+}
+
+*::-moz-scrollbar {
+    width: 12px;
+}
+
+*::-moz-scrollbar-track {
+    background-color: var(--primary-color);
+}
+
+*::-moz-scrollbar-thumb {
+    background-color: var(--quinary-color);
+}
+
+/* Dark Mode */
+:root:has(#light:checked) {
+    ::-webkit-scrollbar-track {
+        background-color: var(--secondary-color);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--septenary-color);
+    }
+
+    .main-navigation {
+        background-color: var(--secondary-color);
+    }
+
+    .main-content {
+        background-color: var(--septenary-color);
+        color: var(--secondary-color);
+    }
+
+    .main-content>.title {
+        color: var(--secondary-color);
+    }
+
+    .main-content>.description {
+        color: var(--secondary-color);
+    }
+
+    .navigation>span>form>label>i {
+        color: var(--septenary-color);
+    }
+
+    .navigation>span>form>label>i:hover {
+        color: var(--senary-color);
+    }
+
+    .sidebar {
+        background-color: var(--secondary-color);
+    }
+
+    .brand {
+        background-color: var(--septenary-color);
+    }
+
+    .brand :is(a, i) {
+        color: var(--secondary-color);
+    }
+
+    .site-footer {
+        background-color: var(--septenary-color);
+    }
+
+    .footer-wrapper :is(a, i, p, u) {
+        color: var(--secondary-color);
+    }
+
+    .footer-wrapper :is(a:hover, a:hover>i) {
+        color: var(--senary-color);
+    }
+}

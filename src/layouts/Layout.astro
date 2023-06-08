@@ -1,0 +1,17 @@
+---
+import Meta from '../components/Meta.astro';
+import MainContent from '../components/MainContent.astro';
+
+const { title, description, date } = Astro.props;
+---
+
+<Meta title={title}>
+	<MainContent title={title}>
+		<div class="title">{title}</div>
+		<article>
+			<p class="title">{title}</p>
+			<h2>{description}</h2>
+			<h2>{date}</h2>
+		</article>
+	</MainContent>
+</Meta>

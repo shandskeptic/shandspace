@@ -1,0 +1,29 @@
+---
+import SidebarLink from '../components/SidebarLink.astro';
+
+export interface Props {
+    brand: string;
+}
+
+const { brand } = Astro.props;
+---
+
+<aside class="sidebar">
+    <div class="brand">
+        <a href="/"><i class="fa-solid fa-terminal"></i>{brand}</a>
+    </div>
+    <ul class="sidebar-list">
+        <li>
+            <SidebarLink href="/"><i class="fa-sharp fa-solid fa-xmark"></i> <span>Home.</span></SidebarLink>
+        </li>
+        <li>
+            <SidebarLink href="/about"><i class="fa-sharp fa-solid fa-xmark"></i> <span>About.</span></SidebarLink>
+        </li>
+        <li>
+            <SidebarLink href="/blog"><i class="fa-sharp fa-solid fa-xmark"></i> <span>Blog.</span></SidebarLink>
+        </li>
+        <li>
+            <SidebarLink href="/more"><i class="fa-sharp fa-solid fa-xmark"></i> <span>More.</span></SidebarLink>
+        </li>
+    </ul>
+</aside>

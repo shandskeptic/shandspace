@@ -1,0 +1,23 @@
+---
+export interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<header class="site-header">
+    <nav class="main-navigation">
+        <div class="navigation">
+            <span>{title}</span>
+            <span>
+                <form action="dark-mode">
+                    <input type="checkbox" name="theme" id="light" data-alt-value="dark" />
+                    <label for="light" class="theme-option">
+                        <i class="fa-solid fa-moon"></i>
+                    </label>
+                </form>
+            </span>
+        </div>
+    </nav>
+</header>

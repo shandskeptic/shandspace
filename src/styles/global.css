@@ -132,11 +132,6 @@ i.fa-sharp.fa-solid.fa-xmark {
     align-items: center;
 }
 
-a:hover,
-a:hover>i {
-    color: var(--senary-color);
-}
-
 a:hover>i.fa-sharp.fa-solid.fa-xmark {
     transform: rotate(90deg);
     transition: var(--primary-transform);
@@ -159,9 +154,7 @@ a:hover>span {
 }
 
 .sidebar-list>li>a:not(:hover)>span {
-    padding: 2rem;
     transition: 0.4s ease-in-out;
-    align-items: center;
 }
 
 

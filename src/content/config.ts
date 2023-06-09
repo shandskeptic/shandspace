@@ -7,8 +7,9 @@ schema: z.object({
 	title: z.string().max(60, "For optimize SEO, provide a title of 60 ch or less"),
 	date: z.date(),
 	description: z.string().max(160, "For optimize SEO, provide a title of 160 ch or less"),
+	author: z.enum(["John Doe"]),
 	draft: z.boolean().optional(),
-	image: z.object({
+	heroImage: z.object({
 		url: z.string().optional(),
 		alt: z.string().optional(),
 	}),

@@ -3,3 +3,20 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Welcome to My Workspace." />
+<script>
+    declare global {
+        interface Window {
+            netlifyIdentity: any;
+        }
+    }
+
+    if (window.netlifyIdentity) {
+        window.netlifyIdentity.on('init', (user: any) => {
+            if (!user) {
+                window.netlifyIdentity.on('login', () => {
+                    document.location.href = '/admin/';
+                });
+            }
+        });
+    }
+</script>

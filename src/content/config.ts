@@ -4,14 +4,18 @@ import { z, defineCollection } from 'astro:content';
 // 2. Define a `type` and `schema` for each collection
 const blog = defineCollection({
 schema: z.object({
-	title: z.string().max(60, "For optimize SEO, provide a title of 60 ch or less"),
-	date: z.date(),
-	description: z.string().max(160, "For optimize SEO, provide a title of 160 ch or less"),
+	title: z.string(),
+	pubDate: z
+		.string()
+		.or(z.date())
+		.transform((val) => new Date(val)),
+	updatedDate: z
+			.string()
+			.optional()
+			.transform((str) => (str ? new Date(str) : undefined)),
+	description: z.string(),
 	draft: z.boolean().optional(),
-	heroImage: z.object({
-		url: z.string().optional(),
-		alt: z.string().optional(),
-	}),
+	heroImage: z.string().optional(),
 }),
 });
 

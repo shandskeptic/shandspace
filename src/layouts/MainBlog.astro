@@ -6,7 +6,7 @@ import { getCollection, getEntryBySlug } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 
 const blogPosts = await getCollection('blog', ({ data }) => {
-    return !data.draft && data.date < new Date();
+    return !data.draft && data.pubDate < new Date();
 });
 
 const post1 = await getEntryBySlug('blog', 'post-1');
@@ -25,11 +25,11 @@ const { title } = Astro.props;
                         blogPosts.map((post) => (
                             <li class="blog-item">
                                 <div class="blog-img">
-                                    <img src={post.data.heroImage.url} alt={post.data.heroImage.alt} />
+                                    <img src={post.data.heroImage} />
                                 </div>
                                 <div class="blog-info">
                                     <div class="blog-label">
-                                        <FormattedDate date={post.data.date} />
+                                        <FormattedDate date={post.data.pubDate} />
                                     </div>
                                     <div class="blog-title">
                                         <a href={`/blog/${post.slug}`} class="description">

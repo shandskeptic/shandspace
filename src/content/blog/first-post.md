@@ -1,10 +1,12 @@
 ---
-title: ShanD
+title: ShanDtesting
 description: Lorem ipsum dolor sit amet
 pubDate: Jul 08 2022
 heroImage: /assets/image-1.jpg
 author: ShanD
-category: CSS
+category:
+  - CSS
+  - JS
 draft: false
 ---
 

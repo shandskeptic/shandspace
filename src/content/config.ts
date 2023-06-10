@@ -16,7 +16,7 @@ schema: z.object({
 	description: z.string(),
 	heroImage: z.string().optional(),
 	author: z.enum(["ShanD","Test"]),
-	category: z.string(),
+	category: z.array(z.string()),
 	draft: z.boolean().default(false),
 }),
 });

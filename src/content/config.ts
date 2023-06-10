@@ -14,8 +14,10 @@ schema: z.object({
 			.optional()
 			.transform((str) => (str ? new Date(str) : undefined)),
 	description: z.string(),
-	draft: z.boolean().optional(),
 	heroImage: z.string().optional(),
+	author: z.enum(["ShanD","Test"]),
+	category: z.enum(["HTML","CSS"]),
+	draft: z.boolean().default(false),
 }),
 });
 

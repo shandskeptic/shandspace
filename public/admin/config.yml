@@ -19,4 +19,5 @@ collections:
       - { label: 'Publish Date', name: 'pubDate', widget: 'datetime' }
       - { label: 'Hero Image', name: 'heroImage', widget: 'image' }
       - { label: 'Author', name: 'author', widget: 'string' }
+      - { label: 'Category', name: 'category', widget: 'list' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
